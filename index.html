@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1><b><a class="logo" href="#logo">Device Media Player</a></b></h1>
+        <!-- <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#products">Products</a> -->
+    </div>
+
+    <div class="container">
+        <video id="video" class="my-video" controls autoplay> <!-- controls autoplay loop muted -->
+            <source src="">
+        </video>
+    </div>
+
+    <div class="input">
+        <label class="text" for="input">Choose a video file to process:</label>
+        <input type="file" id="input" name="input_video">
+    </div>
+
+    <script>
+        document.getElementById("input").addEventListener("change", function () {
+            var media = URL.createObjectURL(this.files[0]);
+            var video = document.getElementById("video");
+            video.src = media;
+            video.play();
+        });
+
+        var video = document.getElementById("video");
+
+        // for (var i = 0; i < video.audioTracks.length; i += 1) {
+        //     video.audioTracks[i].enabled = false;
+        // }
+    </script>
+</body>
+
+</html>
